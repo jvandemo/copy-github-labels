@@ -117,6 +117,7 @@ copyGitHubLabels.copy(source, destination, function (err, label){
 ### v1.2.0
 
 - added documentation
+- added additional unit tests
 
 ### v1.1.0
 
