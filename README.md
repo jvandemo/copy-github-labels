@@ -88,6 +88,10 @@ copyGitHubLabels.copy(source, destination, function (err, label){
 
 ## Change log
 
+### v1.1.0
+
+- support optional callback
+
 ### v1.0.0
 
 - added authentication support
