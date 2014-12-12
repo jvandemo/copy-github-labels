@@ -1,0 +1,38 @@
+{
+  "name": "copy-github-labels",
+  "version": "1.0.0",
+  "description": "Easily copy labels from one GitHub repository to another",
+  "main": "index.js",
+  "dependencies": {
+    "extend": "^2.0.0",
+    "github": "^0.2.3"
+  },
+  "devDependencies": {
+    "chai": "^1.10.0",
+    "mocha": "^2.0.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jvandemo/copy-github-labels.git"
+  },
+  "keywords": [
+    "git",
+    "github",
+    "labels",
+    "issues",
+    "copy"
+  ],
+  "author": {
+    "name": "Jurgen Van de Moere",
+    "email": "jurgen.van.de.moere@gmail.com",
+    "url": "http://www.jvandemo.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jvandemo/copy-github-labels/issues"
+  },
+  "homepage": "https://github.com/jvandemo/copy-github-labels"
+}
