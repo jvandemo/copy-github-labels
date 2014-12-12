@@ -114,9 +114,13 @@ copyGitHubLabels.copy(source, destination, function (err, label){
 
 ## Change log
 
+### v1.2.0
+
+- added documentation
+
 ### v1.1.0
 
-- support optional callback
+- added support for obsolete callback
 
 ### v1.0.0
 
