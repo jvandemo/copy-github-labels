@@ -2,6 +2,8 @@
 
 Easily copy GitHub labels from one repository to another.
 
+[![Build Status](https://travis-ci.org/jvandemo/copy-github-labels.svg?branch=master)](https://travis-ci.org/jvandemo/copy-github-labels)
+
 ## Installation
 
 ```bash
