@@ -1,6 +1,6 @@
 # Copy GitHub labels
 
-Easily copy GitHub labels from one repository to another.
+Easily copy GitHub labels from one repository to another. Uses [GitHub API for Node.js](https://github.com/mikedeboer/node-github).
 
 [![Build Status](https://travis-ci.org/jvandemo/copy-github-labels.svg?branch=master)](https://travis-ci.org/jvandemo/copy-github-labels)
 
@@ -24,6 +24,28 @@ copyGitHubLabels.authenticate({
 copyGitHubLabels.copy('github-username/src-repo', 'github-username/dest-repo');
 
 ```
+
+## Options
+
+By default, the module is configured to use GitHub, but you can optionally pass in settings during instantiation:
+
+```javascript
+var option = {
+    // required
+    version: "3.0.0",
+    // optional
+    debug: true,
+    protocol: "https",
+    host: "github.my-GHE-enabled-company.com",
+    pathPrefix: "/api/v3", // for some GHEs
+    timeout: 5000,
+    headers: {
+        "user-agent": "My-Cool-GitHub-App", // GitHub is happy with a unique user agent
+    }
+});
+```
+
+All [node-github](https://github.com/mikedeboer/node-github) API options are supported.
 
 ## API
 
