@@ -27,7 +27,41 @@ copyGitHubLabels.copy('github-username/src-repo', 'github-username/dest-repo');
 
 ## API
 
+### authenticate(credentials)
+
+Specify credentials to use when connecting to GitHub:
+
+```javascript
+// Use basic auth
+github.authenticate({
+    type: "basic",
+    username: "mikedeboertest",
+    password: "test1324"
+});
+
+// Or use oauth
+github.authenticate({
+    type: "oauth",
+    token: "e5a4a27487c26e571892846366de023349321a73"
+});
+
+// Or use oauth key/ secret
+github.authenticate({
+    type: "oauth",
+    key: "clientID",
+    secret: "clientSecret"
+});
+
+// Or use a token
+github.authenticate({
+    type: "token",
+    token: "userToken",
+});
+```
+
 ### copy(source, destination[, callback])
+
+Copy labels from one repository to another:
 
 ```javascript
 // A repo can be a string
