@@ -7,7 +7,7 @@ Easily copy GitHub labels from one repository to another.
 ## Installation
 
 ```bash
-npm install copy-github-labels
+$ npm install copy-github-labels
 ```
 
 ## Example
@@ -20,6 +20,16 @@ copyGitHubLabels.authenticate({
   token: 'your-github-token'
 });
 
+// Copy labels from one repository to another
+copyGitHubLabels.copy('github-username/src-repo', 'github-username/dest-repo');
+
+```
+
+## API
+
+### copy(source, destination[, callback])
+
+```javascript
 // A repo can be a string
 var source = 'github-username/repo-name';
 
@@ -40,10 +50,7 @@ copyGitHubLabels.copy(source, destination, function (err, label){
   // Copy succeeded
   console.log('Label copied successfully: ' + label)
 });
-
 ```
-
-## API
 
 ## Change log
 
