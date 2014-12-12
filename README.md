@@ -30,7 +30,8 @@ copyGitHubLabels.copy('github-username/src-repo', 'github-username/dest-repo');
 By default, the module is configured to use GitHub, but you can optionally pass in settings during instantiation:
 
 ```javascript
-var option = {
+// Define custom options
+var options = {
     // required
     version: "3.0.0",
     // optional
@@ -43,6 +44,9 @@ var option = {
         "user-agent": "My-Cool-GitHub-App", // GitHub is happy with a unique user agent
     }
 });
+
+// Instantiate with custom options
+var copyGitHubLabels = require('copy-github-labels')(options);
 ```
 
 All [node-github](https://github.com/mikedeboer/node-github) API options are supported.
@@ -55,27 +59,27 @@ Specify credentials to use when connecting to GitHub:
 
 ```javascript
 // Use basic auth
-github.authenticate({
+copyGitHubLabels.authenticate({
     type: "basic",
     username: "mikedeboertest",
     password: "test1324"
 });
 
 // Or use oauth
-github.authenticate({
+copyGitHubLabels.authenticate({
     type: "oauth",
     token: "e5a4a27487c26e571892846366de023349321a73"
 });
 
 // Or use oauth key/ secret
-github.authenticate({
+copyGitHubLabels.authenticate({
     type: "oauth",
     key: "clientID",
     secret: "clientSecret"
 });
 
 // Or use a token
-github.authenticate({
+copyGitHubLabels.authenticate({
     type: "token",
     token: "userToken",
 });
