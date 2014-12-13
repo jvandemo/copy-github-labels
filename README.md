@@ -4,6 +4,8 @@ Easily copy GitHub labels from one repository to another. Uses [GitHub API for N
 
 [![Build Status](https://travis-ci.org/jvandemo/copy-github-labels.svg?branch=master)](https://travis-ci.org/jvandemo/copy-github-labels)
 
+![octocat](https://cloud.githubusercontent.com/assets/1859381/5422531/40186cf0-8287-11e4-941c-96cabdb3fb24.jpg)
+
 ## Installation
 
 ```bash
