@@ -13,6 +13,7 @@ $ npm install copy-github-labels
 ## Example
 
 ```javascript
+// Instantiate
 var copyGitHubLabels = require('copy-github-labels')();
 
 // Optionally use credentials
@@ -27,7 +28,7 @@ copyGitHubLabels.copy('github-username/src-repo', 'github-username/dest-repo');
 
 ## Options
 
-By default, the module is configured to use GitHub, but you can optionally pass in settings during instantiation:
+By default, `copyGitHubLabels` is configured to use GitHub, but you can optionally pass in an `options` object during instantiation:
 
 ```javascript
 // Define custom options
@@ -52,6 +53,8 @@ var copyGitHubLabels = require('copy-github-labels')(options);
 All [node-github](https://github.com/mikedeboer/node-github) API options are supported.
 
 ## API
+
+Once you have instantiated `copyGitHubLabels`, you can use the following methods:
 
 ### authenticate(credentials)
 
