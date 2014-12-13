@@ -119,6 +119,10 @@ copyGitHubLabels.copy(source, destination, function (err, label){
 
 ## Change log
 
+### v1.2.1
+
+- fix documentation
+
 ### v1.2.0
 
 - added documentation
