@@ -120,7 +120,7 @@ copyGitHubLabels.copy(source, destination, function (err, label){
 ## Change log
 
 ### v1.3.0
-
+git taf
 - added support for more than 30 labels
 - reformatted source code
 - updated documentation
