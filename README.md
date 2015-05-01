@@ -35,17 +35,15 @@ By default, `copyGitHubLabels` is configured to use GitHub, but you can optional
 ```javascript
 // Define custom options
 var options = {
-    // required
-    version: "3.0.0",
-    // optional
-    debug: true,
-    protocol: "https",
-    host: "github.my-GHE-enabled-company.com",
-    pathPrefix: "/api/v3", // for some GHEs
-    timeout: 5000,
-    headers: {
-        "user-agent": "My-Cool-GitHub-App", // GitHub is happy with a unique user agent
-    }
+  version: "3.0.0",
+  debug: true,
+  protocol: "https",
+  host: "github.my-GHE-enabled-company.com",
+  pathPrefix: "/api/v3", // for some GHEs
+  timeout: 5000,
+  headers: {
+    "user-agent": "My-Cool-GitHub-App", // GitHub is happy with a unique user agent
+  }
 });
 
 // Instantiate with custom options
@@ -65,28 +63,28 @@ Specify credentials to use when connecting to GitHub:
 ```javascript
 // Use basic auth
 copyGitHubLabels.authenticate({
-    type: "basic",
-    username: "mikedeboertest",
-    password: "test1324"
+  type: "basic",
+  username: "mikedeboertest",
+  password: "test1324"
 });
 
 // Or use oauth
 copyGitHubLabels.authenticate({
-    type: "oauth",
-    token: "e5a4a27487c26e571892846366de023349321a73"
+  type: "oauth",
+  token: "e5a4a27487c26e571892846366de023349321a73"
 });
 
 // Or use oauth key/ secret
 copyGitHubLabels.authenticate({
-    type: "oauth",
-    key: "clientID",
-    secret: "clientSecret"
+  type: "oauth",
+  key: "clientID",
+  secret: "clientSecret"
 });
 
 // Or use a token
 copyGitHubLabels.authenticate({
-    type: "token",
-    token: "userToken",
+  type: "token",
+  token: "userToken",
 });
 ```
 
@@ -115,6 +113,44 @@ copyGitHubLabels.copy(source, destination, function (err, label){
   // Copy succeeded
   console.log('Label copied successfully: ' + label)
 });
+```
+
+## Dry runs
+
+There is a special option called `dryRun` to perform a test run without actually copying the labels.
+
+This is convenient if you want to check if the correct labels are coming in before performing the actual copy:
+
+```javascript
+// Define custom options
+var options = {
+
+  // Dry run is a special option that allows us to perform
+  // a test run without actually copying the labels.
+  dryRun: true
+};
+
+// Instantiate with custom options
+var copyGitHubLabels = require('copy-github-labels')(options);
+
+// Define source and destination
+var source = 'jvandemo/copy-github-labels';
+var destination = 'your-username/your-repo';
+
+// Copy labels from one repository to another
+// The callback is called for every label but no actual
+// copy operation is performed, so the destination repository is not updated.
+copyGitHubLabels.copy(source, destination, function (err, label){
+
+  // Log errors
+  if(err){
+    return console.log('Could not copy label: ' + JSON.stringify(err));
+  }
+
+  // Log copies
+  console.log('Label copied successfully: ' + JSON.stringify(label))
+});
+
 ```
 
 ## Change log
