@@ -119,6 +119,12 @@ copyGitHubLabels.copy(source, destination, function (err, label){
 
 ## Change log
 
+### v1.3.0
+
+- added support for more than 30 labels
+- reformatted source code
+- updated documentation
+
 ### v1.2.1
 
 - fix documentation
