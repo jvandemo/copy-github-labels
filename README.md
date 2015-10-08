@@ -6,6 +6,8 @@ Easily copy GitHub labels from one repository to another. Uses [GitHub API for N
 
 ![octocat](https://cloud.githubusercontent.com/assets/1859381/5422531/40186cf0-8287-11e4-941c-96cabdb3fb24.jpg)
 
+> If you want to copy GitHub labels from your command-line instead of from a script, check out [copy-github-labels-cli](https://github.com/jvandemo/copy-github-labels-cli).
+
 ## Installation
 
 ```bash
