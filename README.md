@@ -45,7 +45,11 @@ var options = {
   timeout: 5000,
   headers: {
     "user-agent": "My-Cool-GitHub-App", // GitHub is happy with a unique user agent
-  }
+  },
+  // Includes and excludes are both lists of regular expressions
+  // to match label names against
+  includes: ["type-bug", "severity-.*"],
+  excludes: ["repo-specific.*"]
 });
 
 // Instantiate with custom options
