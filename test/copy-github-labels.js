@@ -5,7 +5,7 @@ var expect = chai.expect;
 const githubOptions = {
 	timeout: 5000,
 	headers: {
-	  accept: 'application/vnd.github.v3+json',
+	  accept: 'application/vnd.github.symmetra-preview+json',
 	  'user-agent': 'Copy-GitHub-Labels'
 	},
 	baseUrl: 'https://api.github.com'
