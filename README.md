@@ -100,7 +100,7 @@ var source = 'github-username/repo-name';
 
 // Or an object
 var destination = {
-  user: 'github-username',
+  owner: 'github-username',
   repo: 'repo-name'
 };
 
@@ -156,6 +156,13 @@ copyGitHubLabels.copy(source, destination, function (err, label){
 ```
 
 ## Change log
+
+### v1.3.2
+
+- added `force` option to attempt update of label if create fails.
+- upgraded from npm module `github` to `octokit/rest`
+- copy `description` if it's there
+- added unit test to validate use of github API
 
 ### v1.3.1
 
