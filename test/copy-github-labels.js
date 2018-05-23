@@ -1,6 +1,15 @@
 var CopyGitHubLabels = require('../');
+var GitHubApi = require("@octokit/rest");
 var chai = require('chai');
 var expect = chai.expect;
+const githubOptions = {
+	timeout: 5000,
+	headers: {
+	  accept: 'application/vnd.github.v3+json',
+	  'user-agent': 'Copy-GitHub-Labels'
+	},
+	baseUrl: 'https://api.github.com'
+};
 
 describe('CopyGitHubLabels', function(){
 
@@ -32,5 +41,36 @@ describe('copyGitHubLabels', function(){
 			expect(copyGitHubLabels.copy).to.be.a('function');
 		});
 
+	});
+});
+
+describe('GithubAPI', function(){
+	it('should be an function', function(){
+		expect(GitHubApi).to.be.a('function');
+	});
+
+	it('should be an object', function(){
+		const octokit = GitHubApi(githubOptions);
+		expect(octokit).to.be.a('object');
+	});
+
+	it('should be a function', function(){
+		const octokit = GitHubApi(githubOptions);
+		expect(octokit.issues.getLabels).to.be.a('function');
+	});
+
+	it('should be an array', function(done){
+		const testRepo = {
+			owner: 'Incrementis',
+			repo: 'TEST-REPO',
+			page: 1
+		  };
+		const octokit = GitHubApi(githubOptions);
+		octokit.issues.getLabels(testRepo, function (error, labels) {
+			expect(labels).to.be.a('object');
+			expect(labels.data).to.be.a('Array');
+			expect(labels.data.length).to.be.at.least(1);
+			done();
+		});
 	});
 });
