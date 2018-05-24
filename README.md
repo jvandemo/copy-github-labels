@@ -157,6 +157,11 @@ copyGitHubLabels.copy(source, destination, function (err, label){
 
 ## Change log
 
+### v1.3.3
+
+- improved error message when exists.
+- updated to aymmetra api.
+
 ### v1.3.2
 
 - added `force` option to attempt update of label if create fails.
