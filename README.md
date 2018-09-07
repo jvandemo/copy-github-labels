@@ -37,14 +37,14 @@ By default, `copyGitHubLabels` is configured to use GitHub, but you can optional
 ```javascript
 // Define custom options
 var options = {
-  version: "3.0.0",
+  version: '3.0.0',
   debug: true,
-  protocol: "https",
-  host: "github.my-GHE-enabled-company.com",
-  pathPrefix: "/api/v3", // for some GHEs
+  protocol: 'https',
+  host: 'github.my-GHE-enabled-company.com',
+  pathPrefix: '/api/v3', // for some GHEs
   timeout: 5000,
   headers: {
-    "user-agent": "My-Cool-GitHub-App", // GitHub is happy with a unique user agent
+    'user-agent': 'My-Cool-GitHub-App', // GitHub is happy with a unique user agent
   }
 });
 
@@ -65,28 +65,28 @@ Specify credentials to use when connecting to GitHub:
 ```javascript
 // Use basic auth
 copyGitHubLabels.authenticate({
-  type: "basic",
-  username: "mikedeboertest",
-  password: "test1324"
+  type: 'basic',
+  username: 'mikedeboertest',
+  password: 'test1324'
 });
 
 // Or use oauth
 copyGitHubLabels.authenticate({
-  type: "oauth",
-  token: "e5a4a27487c26e571892846366de023349321a73"
+  type: 'oauth',
+  token: 'e5a4a27487c26e571892846366de023349321a73'
 });
 
 // Or use oauth key/ secret
 copyGitHubLabels.authenticate({
-  type: "oauth",
-  key: "clientID",
-  secret: "clientSecret"
+  type: 'oauth',
+  key: 'clientID',
+  secret: 'clientSecret'
 });
 
 // Or use a token
 copyGitHubLabels.authenticate({
-  type: "token",
-  token: "userToken",
+  type: 'token',
+  token: 'userToken',
 });
 ```
 
@@ -96,12 +96,12 @@ Copy labels from one repository to another:
 
 ```javascript
 // A repo can be a string
-var source = "github-username/repo-name";
+var source = 'github-username/repo-name';
 
 // Or an object
 var destination = {
-  owner: "github-username",
-  repo: "repo-name"
+  owner: 'github-username',
+  repo: 'repo-name'
 };
 
 // Copy labels from one repository to another
@@ -109,11 +109,11 @@ copyGitHubLabels.copy(source, destination, function (err, label){
 
   // Handle errors
   if(err){
-  	return console.log("Could not copy label: " + err);
+  	return console.log('Could not copy label: ' + err);
   }
 
   // Copy succeeded
-  console.log("Label copied successfully: " + label)
+  console.log('Label copied successfully: ' + label)
 });
 ```
 
@@ -157,9 +157,14 @@ copyGitHubLabels.copy(source, destination, function (err, label){
 
 ## Change log
 
+### v2.0.0
+
+- replaced deprecated [Github package](https://www.npmjs.com/package/github) with [Octokit rest.js](https://github.com/octokit/rest.js) (credits to [Edric Chan](https://github.com/Chan4077))
+- added support to copy label description (credits to [Edric Chan](https://github.com/Chan4077))
+
 ### v1.3.1
 
-- remove console.log statement
+- removed console.log statement
 
 ### v1.3.0
 
