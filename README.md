@@ -96,12 +96,12 @@ Copy labels from one repository to another:
 
 ```javascript
 // A repo can be a string
-var source = 'github-username/repo-name';
+var source = "github-username/repo-name";
 
 // Or an object
 var destination = {
-  user: 'github-username',
-  repo: 'repo-name'
+  owner: "github-username",
+  repo: "repo-name"
 };
 
 // Copy labels from one repository to another
@@ -109,11 +109,11 @@ copyGitHubLabels.copy(source, destination, function (err, label){
 
   // Handle errors
   if(err){
-  	return console.log('Could not copy label: ' + err);
+  	return console.log("Could not copy label: " + err);
   }
 
   // Copy succeeded
-  console.log('Label copied successfully: ' + label)
+  console.log("Label copied successfully: " + label)
 });
 ```
 
