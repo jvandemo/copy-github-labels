@@ -1,14 +1,14 @@
 {
   "name": "copy-github-labels",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Easily copy labels from one GitHub repository to another",
   "main": "index.js",
   "dependencies": {
     "@octokit/rest": "^15.3.0",
-    "extend": "^3.0.1"
+    "extend": "^3.0.2"
   },
   "devDependencies": {
-    "chai": "^4.1.2",
+    "chai": "^4.3.6",
     "inquirer": "^5.2.0",
     "mocha": "^5.1.1"
   },
