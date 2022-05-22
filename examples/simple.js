@@ -13,6 +13,11 @@ var destination = 'your-username/your-repo';
 
 var i=0;
 
+copyGitHubLabels.authenticate({
+  type: 'token',
+  token: 'your-github-api-token'
+});
+
 // Copy labels from one repository to another
 copyGitHubLabels.copy(source, destination, function (err, label){
 
