@@ -45,7 +45,7 @@ describe('copyGitHubLabels', function(){
 });
 
 describe('GithubAPI', function(){
-	it('should be an function', function(){
+	it('should be a function', function(){
 		expect(GitHubApi).to.be.a('function');
 	});
 
@@ -61,8 +61,8 @@ describe('GithubAPI', function(){
 
 	it('should be an array', function(done){
 		const testRepo = {
-			owner: 'Incrementis',
-			repo: 'TEST-REPO',
+			owner: 'octocat',
+			repo: 'Hello-World',
 			page: 1
 		  };
 		const octokit = GitHubApi(githubOptions);
