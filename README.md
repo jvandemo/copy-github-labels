@@ -39,6 +39,7 @@ By default, `copyGitHubLabels` is configured to use GitHub, but you can optional
 var options = {
   version: '3.0.0',
   debug: true,
+  force: false,
   protocol: 'https',
   host: 'github.my-GHE-enabled-company.com',
   pathPrefix: '/api/v3', // for some GHEs
@@ -155,7 +156,28 @@ copyGitHubLabels.copy(source, destination, function (err, label){
 
 ```
 
+## Force update
+
+The default behavior copies labels from the source repo and adds them to the destination only if they do not already exist. Use
+the `force` option to update existing labels in the destination with their version from source.
+
+```javascript
+// Define custom options
+var options = {
+
+  // Force existing labels to update
+  force: true
+};
+
+// Instantiate with custom options
+var copyGitHubLabels = require('copy-github-labels')(options);
+```
+
 ## Change log
+
+### v2.1.0
+
+- Add a `force` option. With `force: true`, if a label already exists in the destination it will be updated with the source label.
 
 ### v2.0.0
 
